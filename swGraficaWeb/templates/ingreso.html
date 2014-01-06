@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block css %}<link href='/static/css/ingreso.css' rel='stylesheet'>{% endblock %}
+{% block titulo %} Ingreso {% endblock %}
+{% block navegacion %}{% endblock %}
+{% block principal %}
+<div id='principal'>
+<p> Datos para prueba: <br>
+Usuario = demo<br>
+Password= demo<br>
+</p>
+<form id='ingreso' method='post' action='/ingreso/'>{% csrf_token %}
+	<ul>{{formu.as_ul}}</ul>
+<label><input class='boton' type='submit' value='Ingresar'/></label>
+</form>
+</div>
+{% endblock %}

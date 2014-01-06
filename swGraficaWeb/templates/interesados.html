@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block titulo %}Interesados {% endblock %}
+{% block css %}
+		<link href='/static/css/tablas.css' rel='stylesheet' media='screen'>
+	<link href='/static/css/imprimir.css' rel='stylesheet' media='print'>
+{% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo interesado</span></a></p>
+			</div>
+{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='elementos'>
+			<table id='tabular'>
+				<caption>Lista de interesados en trabajos de producción</caption>
+				<thead>
+					<tr><th>N°</th><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
+				</thead>
+				<tfoot>
+					<tr><th>N°</th><th>Nombre completo</th><th>DNI</th><th>Oficina o Dependencia</th></tr>
+				</tfoot>
+				<tbody>
+					{% for elemento in datos %}
+						<tr>
+							<td><a href='editar/{{elemento.pk}}'>{{forloop.counter}}</a></td>
+							<td><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</a></td>
+							<td><a href='editar/{{elemento.pk}}'>{{elemento.dni|default:'no registrado'}}</a></td>
+							<td><a href='editar/{{elemento.pk}}'>{{elemento.dni|default:'no registrada'}}</a></td>
+						</tr>
+					{% empty %}
+						<tr><td>No hay interesados disponibles</td></tr>			
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

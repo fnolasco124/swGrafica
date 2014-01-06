@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block css %}
+	<link href='/static/css/tablas.css' rel='stylesheet' media='screen'>
+	<link href='/static/css/imprimir.css' rel='stylesheet' media='print'>
+{% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='/almacen/articulos/nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo artículo</span></a></p>
+			</div>
+			<div class='nuevo'>
+				<p><a href='/almacen/articulos/registro/nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nueva entrada o salida</span></a></p>
+			</div>
+			<div class='listaentradas'>
+				<p><a href='/almacen/articulos/registro/entradas/' ><img src='/static/imagenes/entrada.png'><br><span>Entradas registradas</span></a></p>
+			</div>
+			<div class='listasalidas'>
+				<p><a href='/almacen/articulos/registro/' ><img src='/static/imagenes/salida.png'><br><span>Salidas registradas</span></a></p>
+			</div>
+{% endblock %}
+{% block titulo %}Articulos {% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<p class='resultado'>Costo total: <span>S/.{{suma|intcomma}}</span><br>Cantidad de artículos: <span>{{total}}</span></p>
+		<div id='elementos'>
+			<table id='tabular'>
+				<caption>Reporte de Artículos en Almacén al {{fecha|date:"SHORT_DATE_FORMAT"}}</caption>
+				<thead>
+					<tr>
+						<th>N°</th><th>Nombre del artículo</th><th>Saldo actual</th><th>Precio Referencial Unitario</th><th>Total Referencial</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>N°</th><th>Nombre del artículo</th><th>Saldo actual</th><th>Precio Referencial</th><th>Total Referencial</th>
+					</tr>
+				</tfoot>
+				<tbody>
+				{% for elemento in datos %}
+					<tr>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{forloop.counter}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.nombre}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.sactual|intcomma}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.precioref|intcomma}}</a></td>
+						<td><a class='docu' href='detalle/{{elemento.pk}}'>{{elemento.preciototalref|intcomma}}</a></td>
+					</tr>
+				{% empty %}
+					<p>No hay elementos disponibles</p>
+				{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<p class='resultado'>Costo total: <span>S/.{{suma|intcomma}}</span><br>Cantidad de artículos: <span>{{total}}</span></p>
+	</div>
+{% endblock %}

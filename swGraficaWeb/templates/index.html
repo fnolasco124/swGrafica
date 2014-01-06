@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block titulo %}Inicio{% endblock %}
+{% block css %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+	<link href='/static/css/menus.css' rel='stylesheet'>
+{% endblock %}
+{% block javascript %}
+	<script src='/static/js/jquery-1.6.2.min.js'></script>
+	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/appSw.js'></script>
+{% endblock %}
+{% block principal %} 
+	<div id='principal'>
+		<ul>
+			<li><a href='#tab-Produccion' class='botonProduccion' title='Gestiona los trabajos que se solicitan a la imprenta'>Registro de producción</a></li>
+			<li><a href='#tab-Almacen' class='botonAlmacen' title='Gestiona los recursos del almacén '>Registro de almacén</a></li>
+		</ul>
+		<div id='tab-Produccion'>
+			<div id='trabajosicon'>
+				<p><a href='/produccion/trabajos/'><img src='/static/imagenes/trabajos.png'><br><span>Trabajos</span></a></p>
+			</div>
+			<div id='equiposicon'>
+				<p><a href='/produccion/equipos/'><img src='/static/imagenes/equipos.png'><br><span>Equipos</span></a></p>
+			</div>
+			<div id='interesadosicon'>
+				<p><a href='/produccion/interesados/'><img src='/static/imagenes/interesados.png'><br><span>Interesados</span></a></p>
+			</div>
+			<div id='tdocsicon'>
+				<p><a href='/produccion/tipo-documentos/'><img src='/static/imagenes/tdocs.png'><br><span>Tipos de documentos</span></a></p>
+			</div>
+			<div id='reportesaicon'>
+				<p><a href='/produccion/reportes/anuales/'><img src='/static/imagenes/reportesa.png'><br><span>Reportes anuales</span></a></p>
+			</div>
+			<div id='reportespicon'>
+				<p><a href='/produccion/reportes/periodo/'><img src='/static/imagenes/reportesp.png'><br><span>Reportes por periodos</span></a></p>
+			</div>
+			<div id='reportespeicon'>
+				<p><a href='/produccion/reportes/periodo/equipo/'><img src='/static/imagenes/reportespe.png'><br><span>Reportes por equipos</span></a></p>
+			</div>
+		</div>
+		<div id='tab-Almacen'>
+			<div id='entradasalidaicon'>
+				<p><a href='/almacen/articulos/registro/nuevo'><img src='/static/imagenes/entradasalida.png'><br><span>Nuevas entradas y salidas</span></a></p>
+			</div>
+			<div id='entradasicon'>
+				<p><a href='/almacen/articulos/registro/entradas/'><img src='/static/imagenes/entrada.png'><br><span>Entradas</span></a></p>
+			</div>
+			<div id='salidasicon'>
+				<p><a href='/almacen/articulos/registro/'><img src='/static/imagenes/salida.png'><br><span>Salidas</span></a></p>
+			</div>
+			<div id='articulosicon'>
+				<p><a href='/almacen/articulos/'><img src='/static/imagenes/articulos.png'><br><span>Artículos</span></a></p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

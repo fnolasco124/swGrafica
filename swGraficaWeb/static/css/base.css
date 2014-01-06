@@ -1,0 +1,95 @@
+/* Estandarización de elemento */
+body, div, ul, li, a, p {
+	margin:0;
+	padding:0;
+}
+
+body { font-family:'Convergence',sans-serif; }
+
+#contenido { margin:5px auto; height:540px; }
+
+#encabezado { background:#1C851C; padding:0px 5px; width:960px; margin:0 auto; 	border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; }
+#encabezado h1 { color:#FFFFFF; letter-spacing:-3px; text-align:center; text-shadow:2px 2px #000; }
+#encabezado h2 { color:#000205; text-align:right; text-shadow:-1px -1px #fff;}
+#encabezado img { position:absolute; top:40px; left:220px;}
+
+#usuariobar {background:#F6F4E9; padding:0px 5px; width:960px; margin:0 auto; 	border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000;}
+#usuariobar p { text-align:right; }
+
+/* Estilo para el formulario de ingreso */
+#principal #ingreso ul { list-style:none; text-align:right;}
+#principal #ingreso input { font-size:1.5em; color:#FFF000; box-shadow:2px 2px 5px #FFA500; border-radius:5px; border:1px solid; margin:5px 0;}
+#principal #ingreso label { font-size:1.5em; }
+#principal #ingreso .boton { font-size:1.3em; background:#31AF55; border:0px; border-radius:10px; padding:5px; color:#fff; box-shadow:2px 2px 10px #000;}
+#principal #ingreso .boton { cursor:pointer; margin:10px;}
+#principal #ingreso .boton:hover {box-shadow:-2px -2px 5px #000;}
+
+#principal { text-align:center; margin:20px auto; width:960px; border:10px #fff solid; border-radius:10px; box-shadow:-3px -3px 20px #000; background:#F5F3E5;}
+#principal ul { margin:0 auto; text-align:center; width:462px; }
+#tab-Produccion , #tab-Almacen {height:120px;}
+
+#usuariobar { height:80px; font-family:sans-serif;}
+#usuariobar #cerrar p { text-align:center; font-size:0.8em; float:right;}
+#usuariobar #cerrar p a { color:#FF7100; text-decoration:none; }
+#usuariobar #cerrar p a:hover { color:#FFA500; }
+#usuariobar #cerrar p a img:hover {background:url('../imagenes/salirfondo.png');}
+#navigation { text-align:center; }
+#navigation #user { font-size:0.7em; color:#1E90FF;}
+#navigation #inicio { float:left; }
+#navigation #inicio p { text-align:center; font-size:0.8em; }
+#navigation #inicio p a { color:#FF7100; text-decoration:none; }
+#navigation #inicio p a:hover { color:#FFA500; }
+#navigation #inicio p a img:hover {background:url('../imagenes/iniciofondo.png');}
+#navigation .nuevo { float:left; margin-left:20px; }
+#navigation .nuevo p { text-align:center; font-size:0.8em; }
+#navigation .nuevo p a { color:#FF7100; text-decoration:none; }
+#navigation .nuevo p a:hover { color:#FFA500; }
+#navigation .nuevo p a img:hover {background:url('../imagenes/nuevofondo.png');}
+#navigation .lista { float:left; margin-left:20px; }
+#navigation .lista p { text-align:center; font-size:0.8em; }
+#navigation .lista p a { color:#FF7100; text-decoration:none; }
+#navigation .lista p a:hover { color:#FFA500; }
+#navigation .lista p a img:hover {background:url('../imagenes/listafondo.png');}
+#navigation .editar { float:left; margin-left:20px; }
+#navigation .editar p { text-align:center; font-size:0.8em; }
+#navigation .editar p a { color:#FF7100; text-decoration:none; }
+#navigation .editar p a:hover { color:#FFA500; }
+#navigation .editar p a img:hover {background:url('../imagenes/editarfondo.png');}
+#navigation .listaentradas { float:left; margin-left:20px; }
+#navigation .listaentradas p { text-align:center; font-size:0.8em; }
+#navigation .listaentradas p a { color:#FF7100; text-decoration:none; }
+#navigation .listaentradas p img { width:50px; }
+#navigation .listaentradas p a:hover { color:#FFA500; }
+#navigation .listaentradas p a img:hover { background:url('../imagenes/minientradafondo.png');}
+#navigation .listasalidas { float:left; margin-left:20px; }
+#navigation .listasalidas p { text-align:center; font-size:0.8em; }
+#navigation .listasalidas p a { color:#FF7100; text-decoration:none; }
+#navigation .listasalidas p img { width:50px; }
+#navigation .listasalidas p a:hover { color:#FFA500; }
+#navigation .listasalidas p a img:hover { background:url('../imagenes/minisalidafondo.png');}
+
+#elementos { font-family:sans-serif; text-align:left; margin:20px 10px;}
+#elementos ol { text-transform:capitalize; }
+#elementos ol li .docu { text-decoration:none; color:#E68B09; text-transform:none;}
+#elementos ol li .docu:hover { color:#FFA500; }
+#elementos .detalleElemento { text-align:left; }
+
+.instruccion { color:#FF0000; font-size:0.9em; }
+
+#formulario { width:700px; margin:0 auto; text-align:center; padding:25px;}
+#formulario label { font-size:18px; font-family:sans-serif; color:#444444; margin:5px;}
+#formulario input , #formulario textarea { width:370px; padding:5px; font-size:20px; margin:5px; font-family:sans-serif; }
+#formulario select { text-transform:capitalize;} 
+#formulario .errorlist{ color:#FF0018; font-size:15px; list-style:none; background:none !important; font-weight:normal !important; border:none !important; text-align:right !important; } 
+#formulario .errorlist li { float:right !important; font-size:0.7em;}
+#formulario p { width:600px; text-align:right;}
+#formulario p .boton { color:#fff; background:#43B222; border:1px solid #d2d2d2; border-radius:3px; box-shadow:1px 1px 4px #000; cursor:pointer;}
+/*
+#formulario p label { text-align:right; float:left; padding:5px 0px; width:90px;}
+*/
+#formulario p label { padding:5px 0px; width:90px;}
+#formulario p select { width:385px; padding:5px; font-size:20px; margin:5px; font-family:sans-serif; overflow:hidden; background:url('../imagenes/select.jpg') no-repeat right #ddd; }
+
+#pie { padding:0px 5px; width:960px; margin:0 auto; text-align:right; color:#000; font-size:0.9em; letter-spacing:-1px; clear:both;}
+
+.ayudaf1com { margin:10px; text-align:center;} 

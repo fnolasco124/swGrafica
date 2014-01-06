@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block titulo %}Agregar o editar trabajos {% endblock %}
+{% block css %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+{% endblock %}
+{% block javascript %}
+	<script src='/static/js/jquery-1.6.2.min.js'></script>
+	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
+	<script src='/static/js/appSw.js'></script>
+{% endblock %}
+{% block navegacion %}
+			<div class='lista'>
+				<p><a href='/produccion/trabajos/' ><img src='/static/imagenes/lista.png'><br><span>Trabajos registrados</span></a></p>
+			</div>
+{% endblock %}
+{% block principal %}
+<div id='dialogo' title='Confirmación de cambios' style="display:none;">
+		<p>¿Desea guardar los cambios?</p>
+	</div>
+	<div id='principal'>
+		<script>
+			$(function(){
+				var todosinteresados = [
+					{% for persona in interesados %}
+					"{{persona.nombre}}",
+					{% endfor %}
+				];
+				$("#id_interesado").autocomplete({
+					source:todosinteresados
+				});
+			});
+		</script>
+		<div id='elementos'>
+			<p class='instruccion'>* Verifique los datos antes de confirmar.</p>
+			<form id='formulario' method='post' action=''>{% csrf_token %}
+			{{formulario.as_p}}
+			<p><input id='dialogSencillo' type='button' value='Confirmar'/></p>
+			</form>
+		</div>
+{% endblock %}

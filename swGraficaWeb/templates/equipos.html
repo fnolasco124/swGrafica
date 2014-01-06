@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block titulo %}Equipos {% endblock %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
+{% block navegacion %}
+			<div class='nuevo'>
+				<p><a href='nuevo' ><img src='/static/imagenes/nuevo.png'><br><span>Nuevo equipo</span></a></p>
+			</div>
+{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='elementos'>
+			<table id='tabular'>
+			<tr><th>Equipos</th></tr>
+			{% for elemento in datos %}
+					<tr><td><a href='editar/{{elemento.pk}}'>{{elemento.nombre}}</td></tr>
+			{% empty %}
+				<tr><td>No hay elementos disponibles</td></tr>
+			{% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block css %}<link href='/static/css/tablas.css' rel='stylesheet'>{% endblock %}
+{% block titulo %}Detalle: {{dato.nombre}}{% endblock %}
+{% block navegacion %}
+			<div class='lista'>
+				<p><a href='/almacen/articulos/' ><img src='/static/imagenes/lista.png'><br><span>Artículos registrados</span></a></p>
+			</div>
+			<div class='editar'>
+				<p><a href='../../editar/{{dato.pk}}/' ><img src='/static/imagenes/editar.png'><br><span>Editar artículo</span></a></p>
+			</div>
+{% endblock %}
+{% block principal %}
+	<div id='principal'>
+		<div id='elementos'>
+			<table id='tabular'>
+				<tr><th>Nombre</th><td>{{dato.nombre}}</td></tr>
+				<tr><th>Marca</th><td>{{dato.marca|default:'No registrada'}}</td></tr>
+				<tr><th>Código</th><td>{{dato.codigo|default:'No registrado'}}</td></tr>
+				<tr><th>Características</th><td>{{dato.caracteristica|default:'No registradas'}}</td></tr>
+				<tr><th>Unidad de medida</th><td>{{dato.umedida|default:'No registrada'}}</td></tr>
+				<tr><th>Saldo Actual</th><td>{{dato.sactual|intcomma}}</td></tr>
+				<tr><th>Precio Unitario Referencial</th><td>S/. {{dato.precioref|intcomma}}</td></tr>
+				<tr><th>Precio Total Referencial</th><td>S/. {{dato.preciototalref|intcomma}}</td></tr>
+			</table>
+		</div>
+	</div>
+{% endblock %}

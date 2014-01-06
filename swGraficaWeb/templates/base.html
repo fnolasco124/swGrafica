@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<title>{% block titulo %} Inicio {% endblock %} - SwGrafica
+	</title>
+	<meta charset='UTF-8'>
+	
+	<link href='/static/css/base.css' rel='stylesheet' media='screen'>
+	<link href='http://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css' media='screen'>
+	{% block css %}{% endblock %}
+	{% block javascript %}{% endblock %}
+</head>
+<body>
+<div id='contenido'>
+	<div id='encabezado'>
+		<h1>SwGrafica</h1>
+		<h2>Software para oficina Gráfica</h2>
+		
+	</div>
+	<div id='usuariobar'>
+		<div id='navigation'>
+			<div id='user'>
+				<p>Hola, {{user.username}}</p>
+			</div>
+			<div id='inicio'>
+				<p><a href='/'><img src='/static/imagenes/inicio.png'><br><span>Inicio</span></a></p>
+			</div>
+			{% block navegacion %}{% endblock %}
+		</div>
+		<div id='cerrar'><p><a href='/salida/'><img src='/static/imagenes/salir.png'><br><span>Salir</span></a></p></div>
+	</div>	
+   	{% block principal %}
+	{% endblock %}
+	<div id='pie'>
+		<p>Desarrollado por FNB</p>
+	</div>
+</div>
+</body>
+</html>

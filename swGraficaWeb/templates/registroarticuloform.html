@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block titulo %}Entrada o Salida de Almacén{% endblock %}
+{% block css %}
+	<link href='/static/css/south-street/jquery-ui-1.8.16.custom.css' rel='stylesheet'>
+{% endblock %}
+{% block javascript %}
+	<script src='/static/js/jquery-1.6.2.min.js'></script>
+	<script src='/static/js/jquery-ui-1.8.16.custom.min.js'></script>
+	<script src='/static/js/jquery.ui.datepicker-es.js'></script>
+	<script src='/static/js/appSw.js'></script>
+{% endblock %}
+{% block navegacion %}
+			<div class='listaentradas'>
+				<p><a href='/almacen/articulos/registro/entradas/' ><img src='/static/imagenes/entrada.png'><br><span>Entradas registradas</span></a></p>
+			</div>
+			<div class='listasalidas'>
+				<p><a href='/almacen/articulos/registro/' ><img src='/static/imagenes/salida.png'><br><span>Salidas registradas</span></a></p>
+			</div>
+{% endblock %}
+{% block principal %}
+	<div id='dialogo' title='Confirmación de cambios' style="display:none;">
+		<p>¿Desea guardar los cambios?</p>
+	</div>
+	<div id='principal'>
+		<script>
+			$(function(){
+				var todosinteresados = [
+					{% for articulo in articulos %}
+					'{{articulo.nombre|safe}}',
+					{% endfor %}
+				];
+				$("#articulo").autocomplete({
+					source:todosinteresados
+				});
+				$("#id_articulo").autocomplete({
+					source:todosinteresados
+				});
+			});
+		</script>
+		<div id='elementos'>
+			<p class='instruccion'>* Verifique los datos antes de confirmar.</p>
+			<form id='formulario' method='post' action=''>{% csrf_token %}
+				{{formulario.as_p}}
+			<p><input id='dialogSencillo' class='boton' type='button' value='Confirmar'/></p>
+			</form>
+		</div>
+	</div>
+{% endblock %}
